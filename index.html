@@ -8,28 +8,58 @@
   
   <title>Frontend Mentor | Character counter</title>
 </head>
-<body>
-
-  Analyze your text in real-time.
-
-  Start typing here… (or paste your text)
-
-  Exclude Spaces
-  Set Character Limit
-
-  Approx. reading time: <!-- Insert number --> minutes
-
-  <!-- Insert number -->
-  Total Characters
-
-  <!-- Insert number -->
-  Word Count
-
-  <!-- Insert number -->
-  Sentence Count
-
-  Letter Density
-  No characters found. Start typing to see letter density.
-
+<body class="container">
+  <header class="header">
+    <img src="./assets/images/logo-light-theme.svg" alt="Character Counter Logo">
+    <button class="header__theme" aria-label="Toggle Theme">
+      <img class="header__theme--icon header__theme--moon" src="./assets/images/icon-moon.svg" alt="Toggle Theme Icon">
+      <img class="header__theme--icon header__theme--sun" src="./assets/images/icon-sun.svg" alt="Toggle Theme Icon">
+  </header>
+  <h1 class="container__title">Analyze your text in real-time.</h1>
+  <form class="form" action="#">
+    <textarea class="form__words" name="characters" id="characters" placeholder="Start typing here… (or paste your text)"></textarea>
+    <p class="form__words--msg"><img class="form__words--icon" src="./assets/images/icon-info.svg" alt="info icon" /></p>
+    <section class="form__option form__option--exclude">
+      <button class="form__checkbox"><img class="form__checkbox--icon" src="./assets/images/icon-check.svg" alt="check icon" /></button>
+      <label>Exclude spaces</label>
+    </section>
+    <section class="form__option form__option--limit">
+      <button class="form__checkbox"><img class="form__checkbox--icon" src="./assets/images/icon-check.svg" alt="check icon" /></button>
+      <label>Set Character Limit</label>
+      <input class="form__limit" type="number" name="limit" id="limit" placeholder="0" min="0">
+    </section>
+    <p class="form__reading">Approx. reading time:<span class="form__reading--minute"></span>> minutes</p>
+  </form>
+  <section class="counter">
+    <section class="counter__info counter__info--total">
+      <p class="counter__info--number"></p>
+      <h2 class="counter__info--title">Total Characters</h2>
+      <img class="counter__info--bg" src="./assets/images/pattern-character-count.svg" alt="bg pattern">
+    </section>
+    <section class="counter__info counter__info--words">
+      <p class="counter__info--number"></p>
+      <h2 class="counter__info--title">Word Count</h2>
+        <img class="counter__info--bg" src="./assets/images/pattern-word-count.svg" alt="bg pattern">
+    </section>
+    <section class="counter__info counter__info--words">
+      <p class="counter__info--number"></p>
+      <h2 class="counter__info--title">Sentence Count</h2>
+      <img class="counter__info--bg" src="./assets/images/pattern-sentence-count.svg" alt="bg pattern">
+    </section>
+  </section>  
+  <section class="density">
+    <h2 class="density__title">Letter Density</h2>
+    <p class="density__empty">No characters found. Start typing to see letter density.</p>
+    <ul class="density__list">
+      <li class="density__item">
+        <p class="density__item--letter">A</p>
+        <div class="density__item--bar">
+          <div class="density__item--fill"></div>
+        </div>
+        <p class="density__item--percent">70 (100%)</p>
+      </li>
+    </ul>
+    <p class="density__more">See more <img class="density__more--icon" src="./assets/images/icon-check.svg" alt="check icon"/></p>
+  </section>
 </body>
 </html>
