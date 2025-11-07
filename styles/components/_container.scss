@@ -1,0 +1,11 @@
+@use '../utils/variables' as *;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-40;
+    align-items: center;
+    padding-bottom: $spacing-32;
+    background: var(--color-bg);
+    font-family: $font-primary;
+}
