@@ -8,4 +8,15 @@
     padding-bottom: $spacing-32;
     background: var(--color-bg);
     font-family: $font-primary;
+
+    &__title {
+        margin: 0 auto;
+        display: inline-block;
+        width: 21.438rem;
+        text-align: center;
+        color: var(--color-text);
+        font-size: $text-40;
+        font-weight: $font-bold;
+        letter-spacing: $letter-spacing-tight;
+    }
 }
