@@ -4,6 +4,8 @@
     --color-secondary-text: hsl(233,18%,9%);
     --bg-secondary: hsl(240,24%,96%);
     --color-input-text: hsl(235,13%,19%);
+    --border-color: hsl(240, 26%,92%);
+    --border-color-secondary: hsl(235,13%,29%);
 }
 
 .dark {
@@ -12,4 +14,6 @@
     --color-secondary-text: hsl(240,26%,92%);
     --bg-secondary: hsl(235,14%,15%);
     --color-input-text: hsl(240,26%,92%);
+    --border-color: hsl(235, 13,19%);
+    --border-color-secondary: hsl(235,13%,29%);
 }
