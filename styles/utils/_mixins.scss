@@ -1,0 +1,13 @@
+@use './variables' as *;
+
+@mixin form-text(
+	$font-size: $text-16,
+	$line-height: $line-hight-13,
+	$letter-spacing: $letter-spacing-close,
+	$color: var(--color-secondary-text)
+) {
+	font-size: $font-size;
+	line-height: $line-height;
+	letter-spacing: $letter-spacing;
+	color: $color;
+}
