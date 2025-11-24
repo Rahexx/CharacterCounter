@@ -18,9 +18,15 @@
         color: var(--color-input-text);
         background: var(--bg-secondary);
         border-radius: 0.75rem;
+        
+        &:hover {
+            border-color: $purple-500;
+            cursor: pointer;
+        }
 
         &:focus-visible {
-            outline: 1px solid var(--border-color);
+            border-color: $purple-500;
+            outline: 1px solid $purple-500;
         }
 
         &--msg {
@@ -40,6 +46,7 @@
     }
 
     &__checkbox {
+        position: relative;
         height: 1rem;
         width: 1rem;
         display: flex;
@@ -50,6 +57,13 @@
 
         &--icon {
             display: none;
+        }
+
+        &:hover {
+            outline-offset: 2px;
+            outline: 2px solid $purple-500;
+            border-color: var(--border-color);
+            cursor: pointer;
         }
     }
 
