@@ -20,3 +20,14 @@
         letter-spacing: $letter-spacing-tight;
     }
 }
+
+@media (min-width: $breakpoint-tablet) {
+    .container {
+        padding-bottom: $spacing-93;
+
+        &__title {
+            width: 31.875rem;
+            font-size: $text-64;
+        }
+    }
+}
