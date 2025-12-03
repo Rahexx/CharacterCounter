@@ -56,3 +56,26 @@
         }
     }
 }
+
+@media (min-width: $breakpoint-tablet) {
+    .counter {
+        height: 9.375rem;
+        width: 44rem;
+        flex-direction: row;
+
+        &__info {
+            height: 100%;
+            width: 14rem;
+            padding: $spacing-25 $spacing-12;
+
+            &--bg {
+                top: 0;
+                right: calc(-1 * 4.406rem);
+            }
+
+            &--number {
+                font-size: $text-64;
+            }
+        }
+    }
+}
