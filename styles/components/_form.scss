@@ -40,7 +40,6 @@
         
         &:hover {
             border-color: $purple-500;
-            cursor: pointer;
         }
 
         &:focus-visible {
@@ -105,5 +104,36 @@
         @include mx.form-text();
         height: 1.313rem;
 	    margin-top: $spacing-12;
+    }
+}
+
+
+@media (min-width: $breakpoint-tablet) {
+    .form {
+        width: 44rem;
+
+        &__words {
+            height: 12.5rem;
+            padding: $spacing-20;
+        }
+
+        &__info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__options {
+            display: flex;
+            align-items: center;
+        }
+
+        &__option--exclude {
+            margin: 0 $spacing-24 0 0;  
+        }
+
+        &__reading {
+            margin-top: 0
+        }
     }
 }

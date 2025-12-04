@@ -28,20 +28,24 @@
     <form class="form" action="#">
       <textarea class="form__words" name="characters" id="characters" placeholder="Start typing here… (or paste your text)"></textarea>
       <p class="form__words--msg"><img class="form__words--icon" src="./assets/images/icon-info.svg" alt="info icon" /></p>
-      <section class="form__option form__option--exclude">
-      <button class="form__checkbox" id="exclude" type="button" aria-pressed="false">
-        <img class="form__checkbox--icon" src="./assets/images/icon-check.svg" alt="check icon" />
-      </button>      
-      <label class="form__label" for="exclude">Exclude spaces</label>
+      <section class="form__info">
+        <section class="form__options">
+          <section class="form__option form__option--exclude">
+            <button class="form__checkbox" id="exclude" type="button" aria-pressed="false">
+              <img class="form__checkbox--icon" src="./assets/images/icon-check.svg" alt="check icon" />
+            </button>      
+            <label class="form__label" for="exclude">Exclude spaces</label>
+          </section>
+          <section class="form__option form__option--limit">
+            <button class="form__checkbox" id="limit" type="button" aria-pressed="false">
+              <img class="form__checkbox--icon" src="./assets/images/icon-check.svg" alt="check icon" />
+            </button>
+            <label class="form__label" for="limit">Set Character Limit</label>
+            <input class="form__limit" type="number" name="character__limit" id="character__limit" placeholder="0" min="0">
+          </section>
+        </section>
+        <p class="form__reading">Approx. reading time: <span class="form__reading--minute"></span> minutes</p>
       </section>
-      <section class="form__option form__option--limit">
-        <button class="form__checkbox" id="limit" type="button" aria-pressed="false">
-          <img class="form__checkbox--icon" src="./assets/images/icon-check.svg" alt="check icon" />
-        </button>
-        <label class="form__label" for="limit">Set Character Limit</label>
-        <input class="form__limit" type="number" name="character__limit" id="character__limit" placeholder="0" min="0">
-      </section>
-      <p class="form__reading">Approx. reading time: <span class="form__reading--minute"></span> minutes</p>
     </form>
     <section class="counter">
       <div class="counter__info counter__info--total">
