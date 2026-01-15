@@ -88,3 +88,13 @@
         }
     }
 }
+
+@media (min-width: $breakpoint-desktop) {
+    .density {
+        width: 61.875rem;
+
+        &__item--bar {
+            width: 53.688rem;
+        }
+    }
+}
