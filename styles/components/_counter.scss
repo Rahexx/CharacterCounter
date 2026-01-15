@@ -79,3 +79,18 @@
         }
     }
 }
+
+@media (min-width: $breakpoint-desktop) {
+    .counter {
+        width: 61.875rem;
+
+        &__info {
+            width: 19.958rem;
+            padding: $spacing-25 $spacing-16;
+
+            &--bg {
+                right: calc(-1 * 1.886rem);
+            }
+        }
+    }
+}

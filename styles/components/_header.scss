@@ -57,7 +57,7 @@
     }
 }
 
-@media (min-width: $breakpoint-tablet) {
+@media (min-width: $breakpoint-desktop) {
     .header {
         width: 61.875rem;
         margin: $spacing-32 auto 0;

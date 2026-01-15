@@ -137,3 +137,9 @@
         }
     }
 }
+
+@media (min-width: $breakpoint-desktop) {
+    .form {
+        width: 61.875rem;
+    }
+}
