@@ -56,3 +56,11 @@
         }
     }
 }
+
+@media (min-width: $breakpoint-tablet) {
+    .header {
+        width: 61.875rem;
+        margin: $spacing-32 auto 0;
+        padding: 0;
+    }
+}
