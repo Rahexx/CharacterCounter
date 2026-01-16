@@ -8,8 +8,9 @@ const senttencesCount = document.querySelector('.counter__info--sentences p');
 const excludeBtn = document.querySelector('.form__checkbox--exclude');
 const limitBtn = document.querySelector('.form__checkbox--limit');
 const characterLimitInput = document.querySelector('.form__limit');
+const errorMsgLimit = document.querySelector('.form__words--limit');
 
-themeBtn.addEventListener('click', () => {
+function handleChangeTheme() {
   body.classList.toggle('dark');
 
   if (body.classList.contains('dark')) {
@@ -17,12 +18,30 @@ themeBtn.addEventListener('click', () => {
   } else {
     logo.src = './assets/images/logo-light-theme.svg';
   }
-});
+}
+
+function handleExceedCharqLimit(charCounter) {
+    const formErrorMsg = document.querySelector('.form__words--msg');
+    const isPressed = limitBtn.getAttribute('aria-pressed') === 'true';
+    const charLimit = parseInt(characterLimitInput.value, 10) || 0;
+
+    errorMsgLimit.textContent = charLimit;
+
+    if(isPressed && charLimit > 0 && charCounter > charLimit) {
+        formErrorMsg.style.display = 'flex';
+    } else {
+        formErrorMsg.style.display = 'none';
+    }
+}
 
 function updateCounters() {
-    characterCount.textContent = excludeBtn.getAttribute('aria-pressed') === 'true' ? textArea.value.replace(/\s/g, '').length : textArea.value.length;
+    const charCounter = excludeBtn.getAttribute('aria-pressed') === 'true' ? textArea.value.replace(/\s/g, '').length : textArea.value.length;
+    
+    characterCount.textContent = charCounter;
     wordsCount.textContent = textArea.value.trim().split(/\s+/).filter(word => word.length > 0).length;
     senttencesCount.textContent = textArea.value.split(/[.!?]+/).filter(sentence => sentence.trim().length > 0).length;
+
+    handleExceedCharqLimit(charCounter)
 }
 
 function updateReadingTime() {
@@ -45,8 +64,20 @@ function handleExcludeSpaces() {
 
     excludeBtn.setAttribute('aria-pressed', String(!isPressed));
     excludeBtn.classList.toggle('form__checkbox--active');
-    
+
     subTitleCounter.style.display = isPressed ? 'none' : 'inline';
+}
+
+function handleCharacterLimit() {
+    const isPressed = limitBtn.getAttribute('aria-pressed') === 'true';
+
+    limitBtn.setAttribute('aria-pressed', String(!isPressed));
+    limitBtn.classList.toggle('form__checkbox--active');
+    characterLimitInput.style.display = isPressed ? 'none' : 'block';
+
+    if (isPressed) {
+        characterLimitInput.value = '0';
+    }
 }
 
 textArea.addEventListener('input', () => {
@@ -60,11 +91,13 @@ excludeBtn.addEventListener('click', () => {
 });
 
 limitBtn.addEventListener('click', () => {
-    const isPressed = limitBtn.getAttribute('aria-pressed') === 'true';
-    limitBtn.setAttribute('aria-pressed', String(!isPressed));
-    limitBtn.classList.toggle('form__checkbox--active');
-    characterLimitInput.style.display = isPressed ? 'none' : 'block';
-    if (isPressed) {
-        characterLimitInput.value = '';
-    }
+    handleCharacterLimit();
+});
+
+characterLimitInput.addEventListener('input', () => {
+    updateCounters();
+});
+
+themeBtn.addEventListener('click', () => {
+    handleChangeTheme();
 });

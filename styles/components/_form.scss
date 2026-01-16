@@ -50,6 +50,9 @@
         &--msg {
             @include mx.form-text();
             display: none;
+            gap: $spacing-8;
+            align-items: center;
+            margin-bottom: $spacing-16;
             color: $orange-800;
         }
     }
@@ -105,7 +108,7 @@
         display: none;
         height: 1.813rem;
         width: 3.438rem;
-        padding: $spacing-4 $spacing-12;
+        padding: $spacing-4 0 $spacing-4 $spacing-12;
         border: 0.063rem solid var(--border-color-secondary);
         border-radius: 0.375rem;
         color: var(--counter-color);
