@@ -75,6 +75,15 @@
         border: 0.063rem solid var(--color-secondary-text);
         border-radius: 0.25rem;
 
+        &--active {
+            background: $purple-400;
+            border-color: transparent;
+
+            .form__checkbox--icon {
+                display: block;
+            }
+        }
+
         &--icon {
             display: none;
         }

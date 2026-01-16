@@ -23,6 +23,12 @@
             background: $purple-400;
         }
 
+        &--subtitle {
+            display: none;
+            font-size: $text-16;
+            font-weight: $font-regular;
+        }
+
         &--words {
             background: $yellow-500;
         }
@@ -38,7 +44,9 @@
         }
 
         &--title, &--number  {
-            color: var(--color-secondary-text);;
+            position: relative;
+            color: var(--counter-text);
+            z-index: 5;
         }
 
         &--number {

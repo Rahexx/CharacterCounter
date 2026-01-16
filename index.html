@@ -31,13 +31,13 @@
       <section class="form__info">
         <section class="form__options">
           <section class="form__option form__option--exclude">
-            <button class="form__checkbox" id="exclude" type="button" aria-pressed="false">
+            <button class="form__checkbox form__checkbox--exclude" id="exclude" type="button" aria-pressed="false">
               <img class="form__checkbox--icon" src="./assets/images/icon-check.svg" alt="check icon" />
             </button>      
             <label class="form__label" for="exclude">Exclude spaces</label>
           </section>
           <section class="form__option form__option--limit">
-            <button class="form__checkbox" id="limit" type="button" aria-pressed="false">
+            <button class="form__checkbox form__checkbox--limit" id="limit" type="button" aria-pressed="false">
               <img class="form__checkbox--icon" src="./assets/images/icon-check.svg" alt="check icon" />
             </button>
             <label class="form__label" for="limit">Set Character Limit</label>
@@ -50,7 +50,7 @@
     <section class="counter">
       <div class="counter__info counter__info--total">
         <p class="counter__info--number">0</p>
-        <h2 class="counter__info--title">Total Characters</h2>
+        <h2 class="counter__info--title">Total Characters <span class="counter__info--subtitle">(no space)</span></h2>
         <img class="counter__info--bg" src="./assets/images/pattern-character-count.svg" alt="bg pattern">
       </div>
       <div class="counter__info counter__info--words">
