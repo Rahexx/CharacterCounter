@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
-<body class="container">
+<body class="container dark">
   <header class="header">
     <img class="header__logo" src="./assets/images/logo-light-theme.svg" alt="Character Counter Logo">
     <button class="header__theme" aria-label="Toggle Theme">
@@ -44,7 +44,7 @@
             <input class="form__limit" type="number" name="character__limit" id="character__limit" placeholder="0" min="0">
           </section>
         </section>
-        <p class="form__reading">Approx. reading time: <span class="form__reading--minute"></span> minutes</p>
+        <p class="form__reading">Approx. reading time: <span class="form__reading--minute">0</span> minutes</p>
       </section>
     </form>
     <section class="counter">
@@ -79,5 +79,6 @@
       <p class="density__more"><span class="density__more--text">See more </span><i class="bi bi-chevron-down density__more--icon"></i> </p>
     </section>
   </main>
+  <script src="main.js"></script>
 </body>
 </html>

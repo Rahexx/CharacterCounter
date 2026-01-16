@@ -93,11 +93,14 @@
 
     &__limit {
         @include mx.form-text();
+        display: none;
         height: 1.813rem;
         width: 3.438rem;
         padding: $spacing-4 $spacing-12;
         border: 0.063rem solid var(--border-color-secondary);
         border-radius: 0.375rem;
+        color: var(--counter-color);
+        background: transparent
     }
 
     &__reading {
