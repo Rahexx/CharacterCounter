@@ -56,11 +56,12 @@
     }
 
     &__more {
-        display: flex;
+        display: none;
         align-items: center;
         gap: $spacing-8;
         margin-top: $spacing-20;
         color: var(--color-secondary-text);
+        cursor: pointer;
 
         &--text {
             line-height: $line-hight-14;

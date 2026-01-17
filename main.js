@@ -10,6 +10,28 @@ const limitBtn = document.querySelector('.form__checkbox--limit');
 const characterLimitInput = document.querySelector('.form__limit');
 const errorMsgLimit = document.querySelector('.form__words--limit');
 
+const densityMore = document.querySelector('.density__more');
+const densityEmpty = document.querySelector('.density__empty');
+const densityList = document.querySelector('.density__list');
+
+const handleEmptyWarning = (charCounter) => densityEmpty.style.display = charCounter === 0 ? 'block' : 'none';
+const handleShowMoreBtn = (uniqCharCounter) => densityMore.style.display = uniqCharCounter > 5 ? 'flex' : 'none';
+
+function handleLetterDensity(charCounter) {
+    densityList.textContent = '';
+    
+    handleEmptyWarning(charCounter);
+    
+    const textLower = textArea.value.toLowerCase().split('').filter(char => /[a-z]/.test(char));
+
+    const letterFrequency = {};
+    textLower.forEach(letter => {
+        letterFrequency[letter] = (letterFrequency[letter] || 0) + 1;
+    });
+
+    handleShowMoreBtn(Object.keys(letterFrequency).length);
+}
+
 function handleChangeTheme() {
   body.classList.toggle('dark');
 
@@ -42,6 +64,7 @@ function updateCounters() {
     senttencesCount.textContent = textArea.value.split(/[.!?]+/).filter(sentence => sentence.trim().length > 0).length;
 
     handleExceedCharqLimit(charCounter)
+    handleLetterDensity(charCounter);
 }
 
 function updateReadingTime() {
