@@ -22,7 +22,6 @@
 
     &__list {
         margin-top: $spacing-20;
-        display: none;
         flex-direction: column;
         gap: $spacing-12;
     }
@@ -55,7 +54,7 @@
         }
     }
 
-    &__more {
+    &__more, &__less {
         display: none;
         align-items: center;
         gap: $spacing-8;
@@ -72,6 +71,10 @@
         &--icon {
             font-size: $text-21;
         }
+    }
+
+    &__less.active, &__more.active {
+        display: flex;
     }
 }
 

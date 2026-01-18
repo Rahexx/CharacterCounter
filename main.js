@@ -11,11 +11,11 @@ const characterLimitInput = document.querySelector('.form__limit');
 const errorMsgLimit = document.querySelector('.form__words--limit');
 
 const densityMore = document.querySelector('.density__more');
+const densityLess = document.querySelector('.density__less');
 const densityEmpty = document.querySelector('.density__empty');
 const densityList = document.querySelector('.density__list');
 
 const handleEmptyWarning = (charCounter) => densityEmpty.style.display = charCounter === 0 ? 'block' : 'none';
-const handleShowMoreBtn = (uniqCharCounter) => densityMore.style.display = uniqCharCounter > 5 ? 'flex' : 'none';
 
 function handleLetterDensity(charCounter) {
     densityList.textContent = '';
@@ -23,13 +23,48 @@ function handleLetterDensity(charCounter) {
     handleEmptyWarning(charCounter);
     
     const textLower = textArea.value.toLowerCase().split('').filter(char => /[a-z]/.test(char));
+    if (textLower.length === 0) return;
 
     const letterFrequency = {};
     textLower.forEach(letter => {
         letterFrequency[letter] = (letterFrequency[letter] || 0) + 1;
     });
 
-    handleShowMoreBtn(Object.keys(letterFrequency).length);
+    const totalLetters = textLower.length;
+    
+    const sortedLetters = Object.entries(letterFrequency)
+        .sort((a, b) => b[1] - a[1]);
+
+    const isDensityMoreActive = densityMore.classList.contains('active');
+    const isDensityLessActive = densityLess.classList.contains('active');
+    
+    let lettersToShow = sortedLetters;
+    
+    if (!isDensityMoreActive && !isDensityLessActive) {
+        lettersToShow = sortedLetters.slice(0, 5);
+        densityMore.classList.add('active');
+        densityLess.classList.remove('active');
+    } else if (isDensityMoreActive) {
+        lettersToShow = sortedLetters.slice(0, 5);
+    } else if (isDensityLessActive) {
+        lettersToShow = sortedLetters;
+    }
+
+    lettersToShow.forEach(([letter, frequency]) => {
+        const percentage = Math.round((frequency / totalLetters) * 100);
+        
+        const li = document.createElement('li');
+        li.className = 'density__item';
+        li.innerHTML = `
+            <p class="density__item--letter">${letter.toUpperCase()}</p>
+            <div class="density__item--bar">
+                <div class="density__item--fill"></div>
+            </div>
+            <p class="density__item--percent">${frequency} (${percentage}%)</p>
+        `;
+
+        densityList.appendChild(li);
+    });
 }
 
 function handleChangeTheme() {
@@ -123,4 +158,16 @@ characterLimitInput.addEventListener('input', () => {
 
 themeBtn.addEventListener('click', () => {
     handleChangeTheme();
+});
+
+densityMore.addEventListener('click', () => {
+    densityMore.classList.remove('active');
+    densityLess.classList.add('active');
+    updateCounters();
+});
+
+densityLess.addEventListener('click', () => {
+    densityLess.classList.remove('active');
+    densityMore.classList.add('active');
+    updateCounters();
 });
