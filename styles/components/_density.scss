@@ -31,6 +31,15 @@
         align-items: center;
         gap: $spacing-14;
 
+        &--letter {
+            width: 1rem;
+        }
+
+        &--percent {
+            width: 4.375rem;
+            text-align: right;
+        }
+
         &--letter, &--percent {
             color: var(--color-secondary-text);
             line-height: $line-hight-13;
@@ -48,7 +57,6 @@
 
         &--fill {
             height: 0.75rem;
-            width: 6.688rem;
             background: $purple-400;
             border-radius: 3rem;
         }

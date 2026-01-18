@@ -58,7 +58,7 @@ function handleLetterDensity(charCounter) {
         li.innerHTML = `
             <p class="density__item--letter">${letter.toUpperCase()}</p>
             <div class="density__item--bar">
-                <div class="density__item--fill"></div>
+                <div class="density__item--fill" style="width: ${percentage}%"></div>
             </div>
             <p class="density__item--percent">${frequency} (${percentage}%)</p>
         `;
