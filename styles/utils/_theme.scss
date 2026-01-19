@@ -1,0 +1,23 @@
+:root {
+    --color-bg: hsl(0,0%,100%);
+    --color-text: hsl(233,18%,19%);
+    --color-secondary-text: hsl(233,18%,9%);
+    --bg-secondary: hsl(240,24%,96%);
+    --color-input-text: hsl(235,13%,19%);
+    --border-color: hsl(240, 26%,92%);
+    --border-color-secondary: hsl(235,13%,29%);
+    --counter-color: hsl(233,18%,9%);
+    --counter-text: hsl(233,18%,9%);
+}
+
+.dark {
+    --color-bg: hsl(233,18%,9%);
+    --color-text: hsl(240,24%,96%);
+    --color-secondary-text: hsl(240,26%,92%);
+    --bg-secondary: hsl(235,14%,15%);
+    --color-input-text: hsl(240,26%,92%);
+    --border-color: hsl(235, 13,19%);
+    --border-color-secondary: hsl(235,13%,29%);
+    --counter-color: hsl(0, 0%, 100%);
+    --counter-text: hsl(233,18%,9%);
+}

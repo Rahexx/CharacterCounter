@@ -1,0 +1,40 @@
+@use '../utils/variables' as *;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-40;
+    align-items: center;
+    padding-bottom: $spacing-32;
+    background: var(--color-bg);
+    font-family: $font-primary;
+
+    &__title {
+        margin: 0 auto;
+        display: inline-block;
+        width: 21.438rem;
+        text-align: center;
+        color: var(--color-text);
+        font-size: $text-40;
+        font-weight: $font-bold;
+        letter-spacing: $letter-spacing-tight;
+    }
+}
+
+@media (min-width: $breakpoint-tablet) {
+    .container {
+        padding-bottom: $spacing-93;
+
+        &__title {
+            width: 31.875rem;
+            font-size: $text-64;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .container {
+        padding-bottom: $spacing-64;
+        gap: $spacing-48;
+    }
+}

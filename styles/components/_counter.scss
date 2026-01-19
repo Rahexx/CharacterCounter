@@ -1,0 +1,104 @@
+@use '../utils/variables' as *;
+
+.counter {
+    width: 21.438rem;
+    margin: $spacing-40 auto $spacing-24;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-16;
+
+    &__info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-8;
+        height: 8.125rem;
+        width: 100%;
+        padding: $spacing-27 $spacing-20;
+        border-radius: 0.75rem;
+        overflow: hidden;
+
+        &--total {
+            background: $purple-400;
+        }
+
+        &--subtitle {
+            display: none;
+            font-size: $text-16;
+            font-weight: $font-regular;
+        }
+
+        &--words {
+            background: $yellow-500;
+        }
+
+        &--sentences {
+            background: $orange-500;
+        }
+
+        &--bg {
+            position: absolute;
+            top: calc(-1 * $spacing-10);
+            right: calc(-1 * 3.156rem);
+        }
+
+        &--title, &--number  {
+            position: relative;
+            color: var(--counter-text);
+            z-index: 5;
+        }
+
+        &--number {
+            line-height: 100%;
+            letter-spacing: $letter-spacing-tight;
+            font-size: $text-40;
+            font-weight: $font-bold;
+        }
+
+        &--title {
+            line-height: $line-hight-14;
+            letter-spacing: $letter-spacing-close;
+            font-size: $text-20;
+            font-weight: $font-regular;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-tablet) {
+    .counter {
+        height: 9.375rem;
+        width: 44rem;
+        flex-direction: row;
+
+        &__info {
+            height: 100%;
+            width: 14rem;
+            padding: $spacing-25 $spacing-12;
+
+            &--bg {
+                top: 0;
+                right: calc(-1 * 4.406rem);
+            }
+
+            &--number {
+                font-size: $text-64;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .counter {
+        width: 61.875rem;
+
+        &__info {
+            width: 19.958rem;
+            padding: $spacing-25 $spacing-16;
+
+            &--bg {
+                right: calc(-1 * 1.886rem);
+            }
+        }
+    }
+}

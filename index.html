@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Character counter</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body class="container dark">
+  <header class="header">
+    <img class="header__logo" src="./assets/images/logo-dark-theme.svg" alt="Character Counter Logo">
+    <button class="header__theme" aria-label="Toggle Theme">
+      <img class="header__theme--icon header__theme--moon" src="./assets/images/icon-moon.svg" alt="Toggle Theme Icon">
+      <img class="header__theme--icon header__theme--sun" src="./assets/images/icon-sun.svg" alt="Toggle Theme Icon">
+    </button>
+  </header>
+  <h1 class="container__title">Analyze your text in real-time.</h1>
+  <main class="content">
+    <form class="form" action="#">
+      <textarea class="form__words" name="characters" id="characters" placeholder="Start typing here… (or paste your text)"></textarea>
+      <p class="form__words--msg"><img class="form__words--icon" src="./assets/images/icon-info.svg" alt="info icon" />Limit reached! Your text exceeds <span class="form__words--limit">0</span> characters.</p>
+      <section class="form__info">
+        <section class="form__options">
+          <section class="form__option form__option--exclude">
+            <button class="form__checkbox form__checkbox--exclude" id="exclude" type="button" aria-pressed="false">
+              <img class="form__checkbox--icon" src="./assets/images/icon-check.svg" alt="check icon" />
+            </button>      
+            <label class="form__label" for="exclude">Exclude spaces</label>
+          </section>
+          <section class="form__option form__option--limit">
+            <button class="form__checkbox form__checkbox--limit" id="limit" type="button" aria-pressed="false">
+              <img class="form__checkbox--icon" src="./assets/images/icon-check.svg" alt="check icon" />
+            </button>
+            <label class="form__label" for="limit">Set Character Limit</label>
+            <input class="form__limit" type="number" name="character__limit" id="character__limit" placeholder="0" min="0">
+          </section>
+        </section>
+        <p class="form__reading">Approx. reading time: <span class="form__reading--minute">0</span> minutes</p>
+      </section>
+    </form>
+    <section class="counter">
+      <div class="counter__info counter__info--total">
+        <p class="counter__info--number">0</p>
+        <h2 class="counter__info--title">Total Characters <span class="counter__info--subtitle">(no space)</span></h2>
+        <img class="counter__info--bg" src="./assets/images/pattern-character-count.svg" alt="bg pattern">
+      </div>
+      <div class="counter__info counter__info--words">
+        <p class="counter__info--number">0</p>
+        <h2 class="counter__info--title">Word Count</h2>
+          <img class="counter__info--bg" src="./assets/images/pattern-word-count.svg" alt="bg pattern">
+      </div>
+      <div class="counter__info counter__info--sentences">
+        <p class="counter__info--number">0</p>
+        <h2 class="counter__info--title">Sentence Count</h2>
+        <img class="counter__info--bg" src="./assets/images/pattern-sentence-count.svg" alt="bg pattern">
+      </div>
+    </section>  
+    <section class="density">
+      <h2 class="density__title">Letter Density</h2>
+      <p class="density__empty">No characters found. Start typing to see letter density.</p>
+      <ul class="density__list" aria-live="polite"></ul>
+      <p class="density__more"><span class="density__more--text">See more </span><i class="bi bi-chevron-down density__more--icon"></i> </p>
+      <p class="density__less"><span class="density__less--text">See less </span><i class="bi bi-chevron-up density__less--icon"></i> </p>
+    </section>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>

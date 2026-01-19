@@ -1,0 +1,160 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as mx;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 21.438rem;
+    margin: 0 auto;
+
+    &--error {
+        .form__words {
+            border-color: $orange-800;
+            box-shadow: 0 0 0.5rem $orange-800;
+
+            &:focus-visible, &:hover {
+                border-color: $orange-800;
+                outline-color: $orange-800;
+            }
+
+            &--msg {
+                display: flex;
+                align-items: center;
+                gap: $spacing-8;
+                margin-bottom: $spacing-16;
+            }
+        }
+    }
+
+    &__words {
+        height: 21.438rem;
+        margin-bottom: $spacing-16;
+        padding: $spacing-12;
+        border: 2px solid var(--border-color);
+        line-height: $line-hight-14;
+        letter-spacing: $letter-spacing-close;
+        font-size: $text-20;
+        color: var(--color-input-text);
+        background: var(--bg-secondary);
+        border-radius: 0.75rem;
+        
+        &:hover {
+            border-color: $purple-500;
+        }
+
+        &:focus-visible {
+            border-color: $purple-500;
+            outline: 1px solid $purple-500;
+        }
+
+        &--msg {
+            @include mx.form-text();
+            display: none;
+            gap: $spacing-8;
+            align-items: center;
+            margin-bottom: $spacing-16;
+            color: $orange-800;
+        }
+    }
+
+    &__option {
+        height: 1.313rem;
+        display: flex;
+        align-items: center;
+        gap: $spacing-10;
+
+        &--exclude {
+            margin-bottom: $spacing-12;
+        }
+    }
+
+    &__checkbox {
+        position: relative;
+        height: 1rem;
+        width: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0.063rem solid var(--color-secondary-text);
+        border-radius: 0.25rem;
+
+        &--active {
+            background: $purple-400;
+            border-color: transparent;
+
+            .form__checkbox--icon {
+                display: block;
+            }
+        }
+
+        &--icon {
+            display: none;
+        }
+
+        &:hover {
+            outline-offset: 2px;
+            outline: 2px solid $purple-500;
+            border-color: var(--border-color);
+            cursor: pointer;
+        }
+    }
+
+    &__label {
+        @include mx.form-text();
+    }
+
+    &__limit {
+        @include mx.form-text();
+        display: none;
+        height: 1.813rem;
+        width: 3.438rem;
+        padding: $spacing-4 0 $spacing-4 $spacing-12;
+        border: 0.063rem solid var(--border-color-secondary);
+        border-radius: 0.375rem;
+        color: var(--counter-color);
+        background: transparent
+    }
+
+    &__reading {
+        @include mx.form-text();
+        height: 1.313rem;
+	    margin-top: $spacing-12;
+    }
+}
+
+
+@media (min-width: $breakpoint-tablet) {
+    .form {
+        width: 44rem;
+
+        &__words {
+            height: 12.5rem;
+            padding: $spacing-20;
+        }
+
+        &__info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__options {
+            display: flex;
+            align-items: center;
+        }
+
+        &__option--exclude {
+            margin: 0 $spacing-24 0 0;  
+        }
+
+        &__reading {
+            margin-top: 0
+        }
+    }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .form {
+        width: 61.875rem;
+    }
+}

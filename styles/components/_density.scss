@@ -1,0 +1,112 @@
+@use '../utils/variables' as *;
+
+.density {
+    width: 21.438rem;
+    margin: 0 auto;
+
+    &__title {
+        color: var(--color-text);
+        line-height: $line-hight-13;
+        letter-spacing: $letter-spacing-tight;
+        font-size: $text-24;
+        font-weight: $font-semibold;
+    }
+
+    &__empty {
+        margin-top: $spacing-20;
+        color: var(--border-color-secondary);
+        line-height: $line-hight-13;
+        letter-spacing: $letter-spacing-close;
+        font-size: $text-16;
+    }
+
+    &__list {
+        margin-top: $spacing-20;
+        flex-direction: column;
+        gap: $spacing-12;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: $spacing-14;
+
+        &--letter {
+            width: 1rem;
+        }
+
+        &--percent {
+            width: 4.375rem;
+            text-align: right;
+        }
+
+        &--letter, &--percent {
+            color: var(--color-secondary-text);
+            line-height: $line-hight-13;
+            letter-spacing: $letter-spacing-close;
+            font-size: $text-16;
+        }
+
+        &--bar {
+            height: 0.75rem;
+            width: 13.25rem;
+            background: var(--bg-secondary);
+            border-radius: 3rem;
+            overflow: hidden;
+        }
+
+        &--fill {
+            height: 0.75rem;
+            background: $purple-400;
+            border-radius: 3rem;
+        }
+    }
+
+    &__more, &__less {
+        display: none;
+        align-items: center;
+        gap: $spacing-8;
+        margin-top: $spacing-20;
+        color: var(--color-secondary-text);
+        cursor: pointer;
+
+        &--text {
+            line-height: $line-hight-14;
+            letter-spacing: $letter-spacing-close;
+            font-size: $text-20;
+        }
+
+        &--icon {
+            font-size: $text-21;
+        }
+    }
+
+    &__less.active, &__more.active {
+        display: flex;
+    }
+}
+
+@media (min-width: $breakpoint-tablet) {
+    .density {
+        width: 44rem;
+
+        &__item {
+            justify-content: space-between;
+            gap: 0;
+
+            &--bar {
+                width: 35.813rem;
+            }
+        }
+    }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .density {
+        width: 61.875rem;
+
+        &__item--bar {
+            width: 53.688rem;
+        }
+    }
+}
