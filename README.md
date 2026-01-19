@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/Rahexx/CharacterCounter)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [App](https://rahexx.github.io/CharacterCounter)
 
 ## My process
 
